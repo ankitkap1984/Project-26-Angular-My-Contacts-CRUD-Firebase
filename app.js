@@ -17,7 +17,7 @@ contactApp.config(['$routeProvider', function($routeProvider) {
 contactApp.controller("ContactController",['$scope','$firebaseArray',function($scope,$firebaseArray){
   console.log("This is contact controller");
 	//initialize firebase
-  var refData=new Firebase('https://mycontactsapphere.firebaseio.com/contactsList');
+  var refData=new Firebase('Put-firebase-database-link-here');
 	console.log($scope.refData);
 	$scope.contactData=$firebaseArray(refData);
 	console.log($scope.contactData);
