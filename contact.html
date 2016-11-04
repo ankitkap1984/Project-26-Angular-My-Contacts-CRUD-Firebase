@@ -1,0 +1,199 @@
+<h2 class="text-center">My Contacts</h2>
+<div class='text-right'>
+<a href="" style="margin-right:20px" class="btn btn-primary text-right btn-lg" ng-click="addForm()" ng-hide ="addFormShow">+</a>
+<a href="" style="margin-right:20px" class="btn btn-primary text-right btn-lg" ng-click="hideForm()" ng-show="addFormShow">-</a>
+<a href="" style="margin-right:20px" class="btn btn-primary text-right btn-lg" ng-click="hideEditForm()" ng-show="editFormShow">-</a>
+</div>
+<br>
+<div data-alert ng-show="msg" class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>{{msg}}!</strong>
+</div>
+
+<br>
+<form ng-submit="addFormSubmit()" ng-show="addFormShow" class="form-horizontal">
+	
+	<!-- Add Form -->
+	<div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="name" placeholder="Contact Name" required />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="email" placeholder="Contact Email" required />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="company" placeholder="Company Name" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="work_phone" placeholder="Work Phone" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="mobile_phone" placeholder="Mobile Phone" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="home_phone" placeholder="Home Phone" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="street_address" placeholder="Street Address" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="city" placeholder="City" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="state" placeholder="State" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="zipcode" placeholder="Zip Code" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-4 col-md-offset-4">
+			<input class="btn btn-success form-control" type="submit" value="Add Contact" class="button" />
+		</div>
+	 </div>
+</form>
+
+<form ng-submit="editFormSubmit()" ng-show="editFormShow" class="form-horizontal">
+	
+	<!-- Edit Form -->
+	<div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="name" placeholder="Contact Name" required />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="email" placeholder="Contact Email" required />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="company" placeholder="Company Name" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="work_phone" placeholder="Work Phone" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="mobile_phone" placeholder="Mobile Phone" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="home_phone" placeholder="Home Phone" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="street_address" placeholder="Street Address" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="city" placeholder="City" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="state" placeholder="State" />
+		  
+		</div>
+		<div class="col-md-6">
+		  
+			<input class="form-control" type="text" ng-model="zipcode" placeholder="Zip Code" />
+		  
+		</div>
+	 </div>
+	 <div class="row form-group has-feedback">
+		<div class="col-md-4 col-md-offset-4">
+			<input class="btn btn-success form-control" type="submit" value="Update Contact" class="button" />
+		</div>
+	 </div>
+</form>
+<br>
+<!-- Show contact form -->
+<div class="row" ng-show="contactSelected">
+	<div class="col-md-4 col-md-offset-4">
+		<div class="panel panel-primary">	
+			<div class="panel-heading">
+				<h3 class="panel-title">{{name}}</h3>
+			</div>
+			<div class="panel-body" style="background:lightgrey">
+				<ul>
+					<li><strong>Email:</strong>{{email}}</li>
+					<li><strong>Company:</strong>{{company}}</li>
+					<li><strong>Work Phone:</strong>{{work_phone}}</li>
+					<li><strong>Mobile Phone:</strong>{{mobile_phone}}</li>
+					<li><strong>Home Phone:</strong>{{home_phone}}</li>
+					<li><strong>Address:</strong>{{street_address}}, {{city}}, {{state}}, {{zipcode}}</li>	
+				</ul>
+			</div>
+		</div>
+	</div>
+	<a href="" style="margin-right:20px" class="btn btn-primary text-right btn-lg" ng-click="hideContact()">-</a>
+</div>
+<br>
+<table class="table active table-bordered table-striped table-condensed">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Company</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="contact in contactData">
+			
+			<td><h5><a ng-click="showContact(contact)">{{contact.name}}</a></h5></td>
+			<td>{{contact.phone[0].mobile_phone}}</td>
+			<td>{{contact.email}}</td>
+			<td>{{contact.company}}</td>
+			<td style="width:15%" class="text-center">
+				<a href="" style="margin-right:20px" class="btn btn-warning" ng-click="showEditForm(contact)">Edit</a>
+				<a href="" class="btn btn-danger" ng-click="removeContact(contact)">Delete</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
